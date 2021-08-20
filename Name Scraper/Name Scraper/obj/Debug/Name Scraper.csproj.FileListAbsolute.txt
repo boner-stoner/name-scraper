@@ -1,0 +1,7 @@
+C:\Users\Elias\source\repos\Name Scraper\Name Scraper\bin\Debug\Name Scraper.exe.config
+C:\Users\Elias\source\repos\Name Scraper\Name Scraper\bin\Debug\Name Scraper.exe
+C:\Users\Elias\source\repos\Name Scraper\Name Scraper\bin\Debug\Name Scraper.pdb
+C:\Users\Elias\source\repos\Name Scraper\Name Scraper\obj\Debug\Name Scraper.csproj.AssemblyReference.cache
+C:\Users\Elias\source\repos\Name Scraper\Name Scraper\obj\Debug\Name Scraper.csproj.CoreCompileInputs.cache
+C:\Users\Elias\source\repos\Name Scraper\Name Scraper\obj\Debug\Name Scraper.exe
+C:\Users\Elias\source\repos\Name Scraper\Name Scraper\obj\Debug\Name Scraper.pdb

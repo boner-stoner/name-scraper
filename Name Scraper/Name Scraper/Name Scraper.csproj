@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59931271-C7C2-42B3-9B6A-3DB5FA6BF4E5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Name_Scraper</RootNamespace>
+    <AssemblyName>Name Scraper</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Xeger\Automaton.cs" />
+    <Compile Include="Xeger\BasicAutomata.cs" />
+    <Compile Include="Xeger\BasicOperations.cs" />
+    <Compile Include="Xeger\Datatypes.cs" />
+    <Compile Include="Xeger\IAutomatonProvider.cs" />
+    <Compile Include="Xeger\LinkedListExtensions.cs" />
+    <Compile Include="Xeger\ListEqualityComparer.cs" />
+    <Compile Include="Xeger\MinimizationOperations.cs" />
+    <Compile Include="Xeger\RegExp.cs" />
+    <Compile Include="Xeger\RegExpMatchingOptions.cs" />
+    <Compile Include="Xeger\RegExpSyntaxOptions.cs" />
+    <Compile Include="Xeger\SpecialOperations.cs" />
+    <Compile Include="Xeger\State.cs" />
+    <Compile Include="Xeger\StateEqualityComparer.cs" />
+    <Compile Include="Xeger\StatePair.cs" />
+    <Compile Include="Xeger\StringUnionOperations.cs" />
+    <Compile Include="Xeger\Transition.cs" />
+    <Compile Include="Xeger\TransitionComparer.cs" />
+    <Compile Include="Xeger\Xeger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
