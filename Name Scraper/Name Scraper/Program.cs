@@ -4,7 +4,6 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Name_Scraper
 {
@@ -18,7 +17,7 @@ namespace Name_Scraper
 
         public static List<string> used = new List<string>();
         public static int size, threads, total, bad, good;
-        static async void Entry()
+        static void Entry()
         {
             for (;;)
             {
@@ -27,23 +26,24 @@ namespace Name_Scraper
                 string generated = RandomString(size);
                 try
                 {
-                    using (var client = new HttpClient())
+                    using (var client = new WebClient())
                     {
-                        var response = client.GetAsync("https://api.roblox.com/users/get-by-username?username=" + generated);
-                        string j = await response.Result.Content.ReadAsStringAsync();
+                        string j = client.DownloadString("https://api.roblox.com/users/get-by-username?username=" + generated);
                         if (!used.Contains(generated))
                         {
                             if (!j.Contains("User not found"))
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine("    | -> [BAD NAME]: " + generated);
+                                Console.SetCursorPosition(0, Console.CursorTop - 1);
+                                Console.WriteLine("    -> " + generated);
                                 bad++;
                                 total++;
                             }
                             else
                             {
                                 Console.ForegroundColor = ConsoleColor.Green;
-                                Console.WriteLine("    | -> [GOOD NAME]: " + generated);
+                                Console.SetCursorPosition(0, Console.CursorTop - 1);
+                                Console.WriteLine("    -> " + generated);
                                 File.AppendAllText("usernames.txt", generated + "\n");
                                 good++;
                                 total++;
@@ -71,6 +71,8 @@ namespace Name_Scraper
             Console.Write("How many Threads? -> ");
             threads = Int32.Parse(Console.ReadLine());
             Console.Write(Environment.NewLine);
+
+            Console.WriteLine();
 
             //Threads for more POWEEERRRR (jeremy fragrance reference)
             for (int k = 0; k < threads; k++)
