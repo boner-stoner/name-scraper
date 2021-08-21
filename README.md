@@ -3,6 +3,8 @@ made in 30 mins including the time i used to smash my head against the wall tryi
 fast but uses a LOT of ram (only if you're over 4 threads tho). writes all available names to usernames.txt.  
 **estimated names per min is 900-1000**
 
+why don't use httpclient? it's slow, **like really slow*
+
 ## bugs
 ### the overwrite line bug
 how it's supposed to look:   
